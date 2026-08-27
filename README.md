@@ -110,3 +110,10 @@ docker build -t credito-api .
 docker run -p 8000:8000 credito-api
 # POST http://localhost:8000/predict
 ```
+## Registro de versiones
+
+- V1.0.0: estructura base del repositorio.
+- V1.0.1: Avance 1 — carga de datos y EDA.
+- V1.1.0: Avance 2 — ingeniería de características y modelado.
+- V1.1.1: Avance 3 — monitoreo y detección de data drift.
+- V1.2.0: Avance 4 — despliegue con FastAPI y Docker.
