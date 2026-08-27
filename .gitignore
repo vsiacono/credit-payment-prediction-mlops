@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Proyecto PIM5 — específico
+*-venv/
+artifacts/
+*.pkl
+*.joblib

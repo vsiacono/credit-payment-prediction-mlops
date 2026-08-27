@@ -1,0 +1,6 @@
+{
+    "project_code": "pim5-credito",
+    "project_name": "Modelo de comportamiento de pago de creditos",
+    "target_variable": "Pago_atiempo",
+    "data_file": "Base_de_datos.csv"
+}
