@@ -1,0 +1,8 @@
+*-venv/
+.ipynb_checkpoints/
+src/*.ipynb
+.git/
+.gitignore
+readme.md
+__pycache__/
+*.pyc
