@@ -13,3 +13,7 @@ xgboost
 pydantic
 fastapi
 uvicorn[standard]
+scipy
+matplotlib
+streamlit
+joblib
