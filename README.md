@@ -1,29 +1,46 @@
-# mlops_pipeline — Predicción de comportamiento de pago de créditos
+# Credit Payment Prediction — MLOps Pipeline
 
-Proyecto Integrador Módulo 5 (Data Science). Modelo de aprendizaje automático que
-predice si un nuevo solicitante de crédito pagará a tiempo (`Pago_atiempo`), usando
-información histórica de créditos de una empresa financiera.
+Proyecto de Machine Learning y MLOps orientado a predecir si un solicitante de crédito pagará a tiempo (`Pago_atiempo`) a partir de información histórica de créditos.
+
+El proyecto cubre el ciclo de vida completo de un modelo de Machine Learning: análisis exploratorio de datos, ingeniería de características, entrenamiento y evaluación de modelos, monitoreo de data drift y despliegue mediante una API.
+
+## Objetivo del proyecto
+
+Desarrollar un pipeline reproducible para analizar el comportamiento de pago de créditos y llevar un modelo desde la exploración de datos hasta su monitoreo y despliegue.
+
+El dataset contiene **10.763 registros históricos y 23 variables**. Durante el análisis se identificó y excluyó la variable `puntaje` por presentar **data leakage**, evitando utilizar información que no estaría disponible al evaluar un nuevo solicitante.
+
+## Pipeline
+
+**EDA → Feature Engineering → Model Training → Evaluation → Data Drift Monitoring → API Deployment**
+
+Se compararon modelos de **Regresión Logística, Random Forest y XGBoost**, considerando el fuerte desbalanceo de la variable objetivo. La selección del modelo se realizó mediante **ROC-AUC**.
+
+El proyecto también incorpora monitoreo de cambios en las distribuciones de los datos mediante **KS Test, PSI, Jensen-Shannon Divergence y Chi-cuadrado**, una aplicación de monitoreo en **Streamlit** y una API desarrollada con **FastAPI** y preparada para contenerización con **Docker**.
+
+## Tecnologías
+
+`Python` · `Pandas` · `NumPy` · `Scikit-learn` · `XGBoost` · `SciPy` · `Matplotlib` · `Streamlit` · `FastAPI` · `Docker` · `Jupyter` · `Git/GitHub`
 
 ## Estructura del repositorio
 
-```
-mlops_pipeline/
+```text
+credit-payment-prediction-mlops/
 ├── src/
-│   ├── config.json                     # configuración del proyecto (project_code, etc.)
-│   ├── Cargar_datos.ipynb              # carga del dataset de ejemplo (.csv)
-│   ├── comprension_eda.ipynb           # análisis exploratorio de datos
-│   ├── ft_engineering.py               # ingeniería de features (próximo avance)
-│   ├── model_training_evaluation.py    # entrenamiento y evaluación (próximo avance)
-│   ├── model_deploy.py                 # despliegue del modelo (próximo avance)
-│   └── model_monitoring.py             # monitoreo en producción (próximo avance)
+│   ├── config.json
+│   ├── Cargar_datos.ipynb
+│   ├── comprension_eda.ipynb
+│   ├── ft_engineering.py
+│   ├── model_training_evaluation.py
+│   ├── model_monitoring.py
+│   └── model_deploy.py
 ├── Base_de_datos.csv
+├── Dockerfile
+├── .dockerignore
 ├── requirements.txt
 ├── .gitignore
-└── readme.md
-```
-
-Esta estructura es fija y no debe modificarse: los procesos de despliegue a
-producción están automatizados vía pipelines de Jenkins que dependen de ella.
+├── set_up.bat
+└── LICENSE
 
 ## Ramas
 
